@@ -1,0 +1,88 @@
+"""
+Project constants for Kite Auto Trading application.
+"""
+
+# Application Constants
+APP_NAME = "Kite Auto Trading"
+APP_VERSION = "1.0.0"
+
+# API Constants
+KITE_BASE_URL = "https://api.kite.trade"
+KITE_WEBSOCKET_URL = "wss://ws.kite.trade"
+
+# Order Types
+ORDER_TYPE_MARKET = "MARKET"
+ORDER_TYPE_LIMIT = "LIMIT"
+ORDER_TYPE_SL = "SL"
+ORDER_TYPE_SL_M = "SL-M"
+
+# Transaction Types
+TRANSACTION_TYPE_BUY = "BUY"
+TRANSACTION_TYPE_SELL = "SELL"
+
+# Order Varieties
+VARIETY_REGULAR = "regular"
+VARIETY_BO = "bo"  # Bracket Order
+VARIETY_CO = "co"  # Cover Order
+VARIETY_AMO = "amo"  # After Market Order
+
+# Product Types
+PRODUCT_CNC = "CNC"  # Cash and Carry
+PRODUCT_MIS = "MIS"  # Margin Intraday Squareoff
+PRODUCT_NRML = "NRML"  # Normal
+
+# Order Status
+ORDER_STATUS_OPEN = "OPEN"
+ORDER_STATUS_COMPLETE = "COMPLETE"
+ORDER_STATUS_CANCELLED = "CANCELLED"
+ORDER_STATUS_REJECTED = "REJECTED"
+ORDER_STATUS_TRIGGER_PENDING = "TRIGGER PENDING"
+
+# Exchanges
+EXCHANGE_NSE = "NSE"
+EXCHANGE_BSE = "BSE"
+EXCHANGE_NFO = "NFO"  # NSE Futures & Options
+EXCHANGE_BFO = "BFO"  # BSE Futures & Options
+EXCHANGE_CDS = "CDS"  # Currency Derivatives
+EXCHANGE_MCX = "MCX"  # Multi Commodity Exchange
+
+# Timeframes
+TIMEFRAME_MINUTE = "minute"
+TIMEFRAME_3MINUTE = "3minute"
+TIMEFRAME_5MINUTE = "5minute"
+TIMEFRAME_10MINUTE = "10minute"
+TIMEFRAME_15MINUTE = "15minute"
+TIMEFRAME_30MINUTE = "30minute"
+TIMEFRAME_HOUR = "60minute"
+TIMEFRAME_DAY = "day"
+
+# Risk Management Constants
+DEFAULT_STOP_LOSS_PERCENT = 2.0
+DEFAULT_TARGET_PROFIT_PERCENT = 4.0
+DEFAULT_POSITION_SIZE_PERCENT = 2.0
+MAX_POSITIONS_PER_INSTRUMENT = 1
+
+# System Constants
+DEFAULT_RECONNECT_INTERVAL = 10  # seconds
+DEFAULT_API_TIMEOUT = 30  # seconds
+DEFAULT_RATE_LIMIT_DELAY = 0.5  # seconds
+MAX_RETRY_ATTEMPTS = 3
+
+# File Paths
+DEFAULT_CONFIG_PATH = "config.yaml"
+DEFAULT_LOG_PATH = "logs/trading.log"
+DEFAULT_DATA_PATH = "data/"
+DEFAULT_STRATEGIES_PATH = "strategies/"
+
+# Market Hours (IST)
+MARKET_OPEN_HOUR = 9
+MARKET_OPEN_MINUTE = 15
+MARKET_CLOSE_HOUR = 15
+MARKET_CLOSE_MINUTE = 30
+
+# Logging Levels
+LOG_LEVEL_DEBUG = "DEBUG"
+LOG_LEVEL_INFO = "INFO"
+LOG_LEVEL_WARNING = "WARNING"
+LOG_LEVEL_ERROR = "ERROR"
+LOG_LEVEL_CRITICAL = "CRITICAL"
