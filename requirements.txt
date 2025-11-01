@@ -21,6 +21,7 @@ prometheus-client>=0.14.0
 # Configuration and validation
 marshmallow>=3.17.0
 cerberus>=1.3.4
+watchdog>=2.1.0
 
 # Testing dependencies
 pytest>=7.0.0
