@@ -6,9 +6,12 @@ Zerodha's Kite Connect API.
 """
 
 from .base import APIClient, TradingAPIClient, MarketDataAPIClient
+from .kite_client import KiteAPIClient, SessionManager
 
 __all__ = [
     'APIClient',
     'TradingAPIClient', 
     'MarketDataAPIClient',
+    'KiteAPIClient',
+    'SessionManager',
 ]
