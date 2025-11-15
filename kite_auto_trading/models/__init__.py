@@ -30,6 +30,13 @@ from .market_data import (
     clean_ohlc_data,
 )
 
+from .signals import (
+    TradingSignal,
+    SignalType,
+    SignalStrength,
+    StrategyParameters,
+)
+
 __all__ = [
     'Order',
     'Position', 
@@ -51,4 +58,8 @@ __all__ = [
     'validate_ohlc_data',
     'clean_tick_data',
     'clean_ohlc_data',
+    'TradingSignal',
+    'SignalType',
+    'SignalStrength',
+    'StrategyParameters',
 ]
