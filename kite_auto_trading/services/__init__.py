@@ -12,9 +12,16 @@ from .base import (
     StrategyService,
 )
 
+from .market_data_feed import (
+    MarketDataFeed,
+    ConnectionState,
+)
+
 __all__ = [
     'ConfigurationService',
     'PortfolioService',
     'LoggingService', 
     'StrategyService',
+    'MarketDataFeed',
+    'ConnectionState',
 ]

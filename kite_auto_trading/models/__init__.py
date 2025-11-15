@@ -18,6 +18,18 @@ from .base import (
     Strategy,
 )
 
+from .market_data import (
+    Tick,
+    OHLC,
+    Instrument,
+    InstrumentType,
+    MarketDepth,
+    validate_tick_data,
+    validate_ohlc_data,
+    clean_tick_data,
+    clean_ohlc_data,
+)
+
 __all__ = [
     'Order',
     'Position', 
@@ -30,4 +42,13 @@ __all__ = [
     'OrderExecutor',
     'RiskManager',
     'Strategy',
+    'Tick',
+    'OHLC',
+    'Instrument',
+    'InstrumentType',
+    'MarketDepth',
+    'validate_tick_data',
+    'validate_ohlc_data',
+    'clean_tick_data',
+    'clean_ohlc_data',
 ]
