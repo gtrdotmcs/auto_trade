@@ -105,15 +105,26 @@
   - Write unit tests for strategy execution and signal generation
   - _Requirements: 2.4, 2.5_
 
-- [ ] 7. Build risk management system
-- [ ] 7.1 Implement position sizing and validation
+
+- [x] 7. Build risk management system
+
+
+
+
+
+
+
+- [x] 7.1 Implement position sizing and validation
+
   - Create RiskManager class with position sizing algorithms
   - Implement fund validation and margin requirement checks
   - Add per-instrument and portfolio-level position limits
   - Write unit tests for risk calculation and validation logic
   - _Requirements: 4.1, 4.2, 4.4, 4.5_
 
-- [ ] 7.2 Add daily limits and protective mechanisms
+- [x] 7.2 Add daily limits and protective mechanisms
+
+
   - Implement daily loss tracking and limit enforcement
   - Create emergency stop functionality for critical risk scenarios
   - Add drawdown monitoring and protective actions

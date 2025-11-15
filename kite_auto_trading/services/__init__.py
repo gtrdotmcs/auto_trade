@@ -17,6 +17,14 @@ from .market_data_feed import (
     ConnectionState,
 )
 
+from .risk_manager import (
+    RiskManagerService,
+    RiskValidationResult,
+    PositionSizeResult,
+    EmergencyStopReason,
+    DrawdownMetrics,
+)
+
 __all__ = [
     'ConfigurationService',
     'PortfolioService',
@@ -24,4 +32,9 @@ __all__ = [
     'StrategyService',
     'MarketDataFeed',
     'ConnectionState',
+    'RiskManagerService',
+    'RiskValidationResult',
+    'PositionSizeResult',
+    'EmergencyStopReason',
+    'DrawdownMetrics',
 ]
