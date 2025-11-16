@@ -47,6 +47,15 @@ from .portfolio_metrics import (
     DailyReport,
 )
 
+from .logging_service import (
+    LoggingServiceImpl,
+    StructuredLogger,
+    TradeLogger,
+    ErrorLogger,
+    PerformanceLogger,
+    LogLevel,
+)
+
 __all__ = [
     'ConfigurationService',
     'PortfolioService',
@@ -72,4 +81,10 @@ __all__ = [
     'PerformanceMetrics',
     'RiskMetrics',
     'DailyReport',
+    'LoggingServiceImpl',
+    'StructuredLogger',
+    'TradeLogger',
+    'ErrorLogger',
+    'PerformanceLogger',
+    'LogLevel',
 ]
