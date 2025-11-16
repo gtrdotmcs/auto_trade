@@ -33,6 +33,20 @@ from .order_manager import (
     OrderExecutionError,
 )
 
+from .portfolio_manager import (
+    PortfolioManager,
+    Position,
+    Trade,
+    PortfolioSnapshot,
+)
+
+from .portfolio_metrics import (
+    PortfolioMetricsCalculator,
+    PerformanceMetrics,
+    RiskMetrics,
+    DailyReport,
+)
+
 __all__ = [
     'ConfigurationService',
     'PortfolioService',
@@ -50,4 +64,12 @@ __all__ = [
     'OrderRecord',
     'OrderValidationError',
     'OrderExecutionError',
+    'PortfolioManager',
+    'Position',
+    'Trade',
+    'PortfolioSnapshot',
+    'PortfolioMetricsCalculator',
+    'PerformanceMetrics',
+    'RiskMetrics',
+    'DailyReport',
 ]
