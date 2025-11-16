@@ -114,6 +114,11 @@ class OrderExecutor(ABC):
         pass
     
     @abstractmethod
+    def modify_order(self, order_id: str, modifications: Dict[str, Any]) -> bool:
+        """Modify an existing order."""
+        pass
+    
+    @abstractmethod
     def get_order_status(self, order_id: str) -> OrderStatus:
         """Get order status."""
         pass

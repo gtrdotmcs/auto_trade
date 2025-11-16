@@ -25,6 +25,14 @@ from .risk_manager import (
     DrawdownMetrics,
 )
 
+from .order_manager import (
+    OrderManager,
+    OrderUpdate,
+    OrderRecord,
+    OrderValidationError,
+    OrderExecutionError,
+)
+
 __all__ = [
     'ConfigurationService',
     'PortfolioService',
@@ -37,4 +45,9 @@ __all__ = [
     'PositionSizeResult',
     'EmergencyStopReason',
     'DrawdownMetrics',
+    'OrderManager',
+    'OrderUpdate',
+    'OrderRecord',
+    'OrderValidationError',
+    'OrderExecutionError',
 ]
