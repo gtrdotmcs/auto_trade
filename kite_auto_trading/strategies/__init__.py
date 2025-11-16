@@ -23,6 +23,10 @@ from .conditions import (
     create_volume_condition,
 )
 
+from .moving_average_crossover import MovingAverageCrossoverStrategy
+from .rsi_mean_reversion import RSIMeanReversionStrategy
+from .backtesting import Backtester, BacktestResults, BacktestTrade
+
 __all__ = [
     'StrategyBase',
     'TechnicalStrategy',
@@ -36,4 +40,9 @@ __all__ = [
     'create_price_condition',
     'create_indicator_condition',
     'create_volume_condition',
+    'MovingAverageCrossoverStrategy',
+    'RSIMeanReversionStrategy',
+    'Backtester',
+    'BacktestResults',
+    'BacktestTrade',
 ]
