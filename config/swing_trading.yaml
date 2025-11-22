@@ -1,0 +1,72 @@
+# Swing Trading Configuration
+# Designed for holding positions for multiple days to capture larger price movements
+
+app:
+  name: "Kite Auto Trading - Swing Trading"
+  version: "1.0.0"
+  environment: "production"
+  debug: false
+
+api:
+  base_url: "https://api.kite.trade"
+  timeout: 30
+  max_retries: 3
+  retry_delay: 1.0
+  rate_limit_delay: 0.5
+
+market_data:
+  instruments:
+    - "RELIANCE"
+    - "TCS"
+    - "HDFCBANK"
+    - "INFY"
+    - "WIPRO"
+  timeframes:
+    - "15minute"
+    - "day"
+    - "week"  # Longer timeframes for swing trading
+  buffer_size: 1000
+  reconnect_interval: 10
+  max_reconnect_attempts: 5
+
+risk_management:
+  max_daily_loss: 8000.0  # Higher tolerance as positions held longer
+  max_position_size_percent: 4.0  # Larger positions for swing trades
+  max_positions_per_instrument: 1
+  stop_loss_percent: 5.0  # Wider stop loss to avoid premature exits
+  target_profit_percent: 15.0  # Higher profit targets (3:1 risk-reward)
+  emergency_stop_enabled: true
+
+strategies:
+  enabled:
+    - "moving_average_crossover"  # Trend-following for swing trades
+  config_path: "strategies/"
+
+portfolio:
+  initial_capital: 300000.0
+  currency: "INR"
+  brokerage_per_trade: 20.0
+  tax_rate: 0.15
+  holding_period_days: 7  # Target holding period
+
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file_path: "logs/swing_trading.log"
+  max_file_size: "10MB"
+  backup_count: 5
+  console_output: true
+
+monitoring:
+  performance_metrics_interval: 600  # Less frequent monitoring for swing trading
+  health_check_interval: 120
+  alert_thresholds:
+    daily_loss_percent: 8.0
+    drawdown_percent: 12.0
+    connection_failures: 5  # Higher tolerance as not time-critical
+
+database:
+  type: "sqlite"
+  path: "data/swing_trading.db"
+  backup_enabled: true
+  backup_interval: 7200

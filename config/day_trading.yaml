@@ -1,0 +1,74 @@
+# Day Trading Configuration
+# Optimized for intraday trading with positions closed before market close
+
+app:
+  name: "Kite Auto Trading - Day Trading"
+  version: "1.0.0"
+  environment: "production"
+  debug: false
+
+api:
+  base_url: "https://api.kite.trade"
+  timeout: 30
+  max_retries: 3
+  retry_delay: 1.0
+  rate_limit_delay: 0.5
+
+market_data:
+  instruments:
+    - "NIFTY50"
+    - "BANKNIFTY"
+    - "RELIANCE"
+    - "TCS"
+    - "HDFCBANK"
+    - "INFY"
+  timeframes:
+    - "minute"
+    - "5minute"
+    - "15minute"
+  buffer_size: 2000
+  reconnect_interval: 10
+  max_reconnect_attempts: 5
+
+risk_management:
+  max_daily_loss: 5000.0  # Strict daily loss limit for day trading
+  max_position_size_percent: 3.0  # Moderate position sizing
+  max_positions_per_instrument: 2
+  stop_loss_percent: 1.0  # Tight stop loss for quick exits
+  target_profit_percent: 2.0  # Quick profit targets (2:1 risk-reward)
+  emergency_stop_enabled: true
+
+strategies:
+  enabled:
+    - "moving_average_crossover"
+    - "rsi_mean_reversion"
+  config_path: "strategies/"
+
+portfolio:
+  initial_capital: 200000.0
+  currency: "INR"
+  brokerage_per_trade: 20.0
+  tax_rate: 0.15
+  close_all_positions_at: "15:15"  # Close all positions 15 minutes before market close
+
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file_path: "logs/day_trading.log"
+  max_file_size: "10MB"
+  backup_count: 5
+  console_output: true
+
+monitoring:
+  performance_metrics_interval: 120  # Frequent monitoring for day trading
+  health_check_interval: 30
+  alert_thresholds:
+    daily_loss_percent: 5.0
+    drawdown_percent: 8.0
+    connection_failures: 2  # Lower tolerance for connection issues
+
+database:
+  type: "sqlite"
+  path: "data/day_trading.db"
+  backup_enabled: true
+  backup_interval: 1800  # More frequent backups

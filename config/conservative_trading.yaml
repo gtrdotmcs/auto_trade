@@ -1,0 +1,69 @@
+# Conservative Trading Configuration
+# Suitable for risk-averse traders with focus on capital preservation
+
+app:
+  name: "Kite Auto Trading - Conservative"
+  version: "1.0.0"
+  environment: "production"
+  debug: false
+
+api:
+  base_url: "https://api.kite.trade"
+  timeout: 30
+  max_retries: 3
+  retry_delay: 1.0
+  rate_limit_delay: 0.5
+
+market_data:
+  instruments:
+    - "RELIANCE"
+    - "TCS"
+    - "HDFCBANK"
+    - "INFY"
+  timeframes:
+    - "15minute"
+    - "day"
+  buffer_size: 1000
+  reconnect_interval: 10
+  max_reconnect_attempts: 5
+
+risk_management:
+  max_daily_loss: 2000.0  # Conservative daily loss limit
+  max_position_size_percent: 1.0  # Only 1% of capital per trade
+  max_positions_per_instrument: 1
+  stop_loss_percent: 1.5  # Tight stop loss
+  target_profit_percent: 3.0  # Conservative profit target (2:1 risk-reward)
+  emergency_stop_enabled: true
+
+strategies:
+  enabled:
+    - "moving_average_crossover"  # Trend-following strategy
+  config_path: "strategies/"
+
+portfolio:
+  initial_capital: 100000.0
+  currency: "INR"
+  brokerage_per_trade: 20.0
+  tax_rate: 0.15
+
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file_path: "logs/conservative_trading.log"
+  max_file_size: "10MB"
+  backup_count: 5
+  console_output: true
+
+monitoring:
+  performance_metrics_interval: 300
+  health_check_interval: 60
+  alert_thresholds:
+    daily_loss_percent: 2.0  # Alert at 2% daily loss
+    drawdown_percent: 5.0  # Alert at 5% drawdown
+    connection_failures: 3
+
+database:
+  type: "sqlite"
+  path: "data/conservative_trading.db"
+  backup_enabled: true
+  backup_interval: 3600

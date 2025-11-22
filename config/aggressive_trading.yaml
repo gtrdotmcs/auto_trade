@@ -1,0 +1,75 @@
+# Aggressive Trading Configuration
+# Suitable for experienced traders willing to take higher risks for higher returns
+
+app:
+  name: "Kite Auto Trading - Aggressive"
+  version: "1.0.0"
+  environment: "production"
+  debug: false
+
+api:
+  base_url: "https://api.kite.trade"
+  timeout: 30
+  max_retries: 3
+  retry_delay: 1.0
+  rate_limit_delay: 0.5
+
+market_data:
+  instruments:
+    - "RELIANCE"
+    - "TCS"
+    - "HDFCBANK"
+    - "INFY"
+    - "WIPRO"
+    - "TATAMOTORS"
+    - "BAJFINANCE"
+    - "ICICIBANK"
+  timeframes:
+    - "minute"
+    - "5minute"
+    - "15minute"
+  buffer_size: 2000
+  reconnect_interval: 10
+  max_reconnect_attempts: 5
+
+risk_management:
+  max_daily_loss: 15000.0  # Higher daily loss tolerance
+  max_position_size_percent: 5.0  # Up to 5% of capital per trade
+  max_positions_per_instrument: 3  # Multiple positions allowed
+  stop_loss_percent: 3.0  # Wider stop loss
+  target_profit_percent: 9.0  # Higher profit target (3:1 risk-reward)
+  emergency_stop_enabled: true
+
+strategies:
+  enabled:
+    - "moving_average_crossover"
+    - "rsi_mean_reversion"  # Multiple strategies for more opportunities
+  config_path: "strategies/"
+
+portfolio:
+  initial_capital: 500000.0  # Larger capital base
+  currency: "INR"
+  brokerage_per_trade: 20.0
+  tax_rate: 0.15
+
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file_path: "logs/aggressive_trading.log"
+  max_file_size: "10MB"
+  backup_count: 5
+  console_output: true
+
+monitoring:
+  performance_metrics_interval: 180  # More frequent monitoring
+  health_check_interval: 30
+  alert_thresholds:
+    daily_loss_percent: 10.0  # Higher loss tolerance before alert
+    drawdown_percent: 15.0
+    connection_failures: 3
+
+database:
+  type: "sqlite"
+  path: "data/aggressive_trading.db"
+  backup_enabled: true
+  backup_interval: 3600
